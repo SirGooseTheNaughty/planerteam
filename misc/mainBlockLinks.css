@@ -1,0 +1,17 @@
+[data-elem-id="1631621626854"] a {
+    position: relative;
+}
+[data-elem-id="1631621626854"] a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 1px;
+    left: 0;
+    bottom: -1px;
+    background-color: rgb(131, 213, 245);
+    transition: width .4s;
+}
+[data-elem-id="1631621626854"] a:hover::after {
+    width: 100%;
+}

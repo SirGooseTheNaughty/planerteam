@@ -1,0 +1,106 @@
+.burger-fix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.burger-header-lose {
+    position: absolute;
+    top: 80px;
+}
+@media screen and (max-width: 640px) {
+    .burger-header-lose {
+        top: 20px;
+    }
+}
+.burger-header-lose .t396__artboard {
+    background-color: transparent !important;
+}
+.burger-header .t396__artboard {
+    border-bottom-left-radius: 36px;
+    transition: .25s;
+}
+.burger-header-lose .logo {
+    opacity: 0;
+}
+.burger-opened .logo {
+    opacity: 1;
+}
+.burger-header {
+    z-index: 99999;
+    transform: translateY(0);
+    transition: transform .4s ease;
+}
+.burger-header.hidden {
+    transform: translateY(-100%);
+}
+.white-logo,
+.logo {
+    transition: opacity .25s;
+}
+.burger-header:not(.burger-header-lose) .white-logo,
+.burger-opened .burger-header-lose .white-logo {
+    opacity: 0;
+}
+.burger-block {
+    z-index: 9999;
+    transition: clip-path .8s ease;
+    pointer-events: none;
+}
+.burger-opened {
+    overflow: hidden;
+    padding-right: 17px;
+}
+.burger-opened .burger-block  {
+    pointer-events: auto;
+}
+.burger-block a {
+    opacity: 0;
+    transition: opacity .25s;
+}
+.burger-block a:hover {
+    opacity: 1;
+}
+
+.trigger {
+    width: 42px;
+    height: 42px;
+    position: relative;
+    cursor: pointer;
+}
+.trigger span {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 3px;
+    border-radius: 1.5px;
+    background: linear-gradient(to right, #51B2D8 0%, #25346B 100%);
+    transition: .25s ease;
+    transform: translateY(-50%);
+}
+.burger-header-lose .trigger span {
+    background: #F2F2F2;
+}
+.burger-header-lose .trigger.opened span {
+    background: linear-gradient(to right, #51B2D8 0%, #25346B 100%);
+}
+.trigger span:nth-child(1) {
+    top: 42%;
+}
+.trigger span:nth-child(2) {
+    top: 58%;
+    right: 0;
+    width: 29px;
+}
+.trigger:hover span:nth-child(2) {
+    width: 100%;
+}
+.trigger.opened span:nth-child(1) {
+    top: 50%;
+    transform: rotate(-45deg);
+}
+.trigger.opened span:nth-child(2) {
+    width: 100%;
+    top: 50%;
+    transform: rotate(45deg);
+}

@@ -1,0 +1,35 @@
+<style>
+    .js-feed-post {
+        position: relative;
+        background: linear-gradient(to left, #51B2D8 0%, #25346B 100%);
+    }
+    .js-feed-post .t-feed__col-grid__post-wrapper {
+        transition: border-radius .5s ease;
+    }
+    .js-feed-post:hover .t-feed__col-grid__post-wrapper {
+        border-bottom-right-radius: 180px;
+    }
+    .mag-glass {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
+</style>
+
+<script>
+    const magGlass = `
+        <svg class="mag-glass" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M17 9.5C17 13.6421 13.6421 17 9.5 17C5.35786 17 2 13.6421 2 9.5C2 5.35786 5.35786 2 9.5 2C13.6421 2 17 5.35786 17 9.5ZM15.699 16.699C14.0352 18.133 11.8689 19 9.5 19C4.25329 19 0 14.7467 0 9.5C0 4.25329 4.25329 0 9.5 0C14.7467 0 19 4.25329 19 9.5C19 11.6581 18.2804 13.6482 17.068 15.2433C17.0862 15.259 17.104 15.2756 17.1213 15.2929L21.7071 19.8787C22.0976 20.2692 22.0976 20.9024 21.7071 21.2929C21.3166 21.6834 20.6834 21.6834 20.2929 21.2929L15.7071 16.7071C15.7044 16.7044 15.7017 16.7017 15.699 16.699Z" fill="white"/>
+        </svg>
+    `;
+
+    const interval = setInterval(addGlass, 100);
+
+    function addGlass() {
+        const posts = document.querySelectorAll('.js-feed-post');
+        if (posts.length) {
+            posts.forEach(post => $(post).append(magGlass));
+            clearInterval(interval);
+        }
+    }
+</script>

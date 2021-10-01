@@ -1,0 +1,19 @@
+.t-input-block input,
+.t-input-block textarea {
+    border-bottom-right-radius: 22px;
+}
+button.t-submit {
+    height: 60px !important;
+    border-radius: 22px 22px 0px 22px;
+    transition: .4s ease;
+}
+@media screen and (max-width: 640px) {
+    button.t-submit {
+        margin-top: 20px;
+    }
+}
+button.t-submit:hover {
+    border-radius: 0px 22px 22px 22px;
+    border-color: #83D5F5 !important;
+    color: #83D5F5 !important;
+}
